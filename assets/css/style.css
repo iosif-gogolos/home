@@ -444,6 +444,59 @@ footer {
     font-size: 10px;
 }
 
+/* filepath: /Users/iosifgogolos/Library/Mobile Documents/com~apple~CloudDocs/IT-Consultancy/home/assets/css/style.css */
+/* ...existing code... */
+
+.section-featured {
+    padding-top: 90px;
+}
+
+.featured-card {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+    gap: 8vw;
+
+    padding: 55px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.featured-card-label {
+    font-family: "DM Mono", monospace;
+    font-size: 11px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+}
+
+.featured-card-content {
+    max-width: 850px;
+}
+
+.featured-card h2 {
+    margin: 0;
+
+    font-size: clamp(42px, 6vw, 88px);
+    line-height: 0.95;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+}
+
+.featured-card h2 em {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+}
+
+.featured-card p {
+    max-width: 650px;
+    margin: 35px 0 0;
+
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
 /* MOBILE */
 
 @media (max-width: 900px) {
@@ -474,6 +527,11 @@ footer {
     .experience-item {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+
+    .featured-card {
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 }
 
@@ -521,5 +579,9 @@ footer {
     footer {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .section-featured {
+        padding-top: 70px;
     }
 }
