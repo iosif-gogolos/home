@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iosif-gogolos.github.io/sitemap.xml
+Sitemap: https://iosif-gogolos.github.io/home/sitemap.xml
