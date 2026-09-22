@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IT-Dienstleistungen & Lösungen</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap');
+
+        :root {
+            --bg: #f4f2ed;
+            --surface: #ebe8e1;
+            --text: #181817;
+            --muted: #77756f;
+            --line: #d5d1c8;
+            --accent: #9b8b72;
+            --max-width: 1380px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ─────────────────────────────
+           NAVIGATION
+        ───────────────────────────── */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 28px 5vw;
+
+            background: rgba(244, 242, 237, 0.88);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(213, 209, 200, 0.5);
+        }
+
+        .logo {
+            font-family: "DM Mono", monospace;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            color: var(--muted);
+            transition: color 0.25s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text);
+        }
+
+        /* ─────────────────────────────
+           GENERAL
+        ───────────────────────────── */
+
+        .container {
+            width: min(var(--max-width), 90vw);
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--muted);
+        }
+
+        /* ─────────────────────────────
+           HERO
+        ───────────────────────────── */
+
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: flex-end;
+
+            padding: 160px 0 100px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 8vw;
+            align-items: end;
+        }
+
+        .hero h1 {
+            margin: 25px 0 0;
+
+            max-width: 900px;
+
+            font-size: clamp(56px, 8vw, 125px);
+            line-height: 0.92;
+            font-weight: 300;
+            letter-spacing: -0.055em;
+        }
+
+        .hero h1 em {
+            font-family: "Playfair Display", serif;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            max-width: 440px;
+            margin-bottom: 10px;
+
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        .scroll-note {
+            margin-top: 55px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .scroll-line {
+            width: 45px;
+            height: 1px;
+            background: var(--line);
+        }
+
+        /* ─────────────────────────────
+           INTRO
+        ───────────────────────────── */
+
+        .intro {
+            padding: 130px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            gap: 8vw;
+        }
+
+        .intro-text {
+            max-width: 850px;
+            font-size: clamp(28px, 4vw, 55px);
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+        }
+
+        .intro-text span {
+            color: var(--muted);
+        }
+
+        /* ─────────────────────────────
+           SERVICES
+        ───────────────────────────── */
+
+        .services {
+            padding: 80px 0 150px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-number {
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .service {
+            display: grid;
+            grid-template-columns: 90px 0.8fr 1fr;
+            gap: 5vw;
+
+            padding: 55px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .service-number {
+            font-family: "DM Mono", monospace;
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .service h2 {
+            margin: 0;
+
+            font-size: clamp(30px, 3vw, 52px);
+            line-height: 1;
+            font-weight: 300;
+            letter-spacing: -0.035em;
+        }
+
+        .service-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            gap: 9px;
+        }
+
+        .tag {
+            padding: 9px 13px;
+
+            border: 1px solid var(--line);
+            border-radius: 100px;
+
+            font-size: 12px;
+            color: #56544e;
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .tag:hover {
+            background: var(--text);
+            border-color: var(--text);
+            color: var(--bg);
+        }
+
+        /* ─────────────────────────────
+           PHILOSOPHY
+        ───────────────────────────── */
+
+        .philosophy {
+            background: var(--surface);
+            padding: 150px 0;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            gap: 8vw;
+        }
+
+        .philosophy h2 {
+            max-width: 900px;
+
+            margin: 0;
+
+            font-size: clamp(42px, 6vw, 90px);
+            line-height: 0.98;
+            font-weight: 300;
+            letter-spacing: -0.05em;
+        }
+
+        .philosophy h2 em {
+            font-family: "Playfair Display", serif;
+        }
+
+        .principles {
+            margin-top: 90px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .principle {
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+        }
+
+        .principle-number {
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            color: var(--accent);
+        }
+
+        .principle h3 {
+            margin: 35px 0 12px;
+
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .principle p {
+            margin: 0;
+
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        /* ─────────────────────────────
+           TECHNOLOGY
+        ───────────────────────────── */
+
+        .technology {
+            padding: 150px 0;
+        }
+
+        .technology-intro {
+            max-width: 650px;
+            margin: 35px 0 80px;
+
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--muted);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 1px solid var(--line);
+            border-left: 1px solid var(--line);
+        }
+
+        .tech-item {
+            min-height: 150px;
+
+            padding: 25px;
+
+            border-right: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            transition: background 0.25s ease;
+        }
+
+        .tech-item:hover {
+            background: var(--surface);
+        }
+
+        .tech-category {
+            margin-bottom: 35px;
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+        }
+
+        .tech-name {
+            font-size: 18px;
+        }
+
+        /* ─────────────────────────────
+           CONTACT
+        ───────────────────────────── */
+
+        .contact {
+            padding: 160px 0;
+
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            gap: 8vw;
+        }
+
+        .contact h2 {
+            max-width: 900px;
+
+            margin: 0 0 50px;
+
+            font-size: clamp(50px, 8vw, 120px);
+            line-height: 0.9;
+            font-weight: 300;
+            letter-spacing: -0.055em;
+        }
+
+        .contact h2 em {
+            font-family: "Playfair Display", serif;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+
+            padding-bottom: 10px;
+
+            border-bottom: 1px solid #777;
+            font-size: 16px;
+        }
+
+        .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .contact-link:hover .arrow {
+            transform: translateX(8px);
+        }
+
+        /* ─────────────────────────────
+           FOOTER
+        ───────────────────────────── */
+
+        footer {
+            padding: 30px 5vw;
+
+            display: flex;
+            justify-content: space-between;
+
+            background: var(--text);
+            color: #777;
+
+            border-top: 1px solid #333;
+
+            font-family: "DM Mono", monospace;
+            font-size: 10px;
+        }
+
+        /* ─────────────────────────────
+           RESPONSIVE
+        ───────────────────────────── */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .intro-grid,
+            .philosophy-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .service {
+                grid-template-columns: 50px 1fr;
+            }
+
+            .service-content {
+                grid-column: 2;
+            }
+
+            .principles {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 22px 5vw;
+            }
+
+            .hero {
+                min-height: 85vh;
+                padding-top: 130px;
+            }
+
+            .hero h1 {
+                font-size: 18vw;
+            }
+
+            .intro,
+            .philosophy,
+            .technology,
+            .contact {
+                padding: 100px 0;
+            }
+
+            .service {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .service-content {
+                grid-column: auto;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Iosif Gogolos, B.Sc. Softwareentwicklung Google-zertifizierten UX/UI Designer</div>
+    <a href="#contact" class="nav-link">Kontakt ↗</a>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="container">
+        <div class="hero-grid">
+
+            <div>
+                <div class="eyebrow">IT-Dienstleistungen & Lösungen</div>
+
+                <h1>
+                    Infrastruktur<br>
+                    für <em>komplexe</em><br>
+                    Systeme.
+                </h1>
+            </div>
+
+            <div>
+                <p class="hero-description">
+                    Technologie ist nicht nur eine technische Disziplin.
+                    Sie ist die Struktur, auf der Unternehmen arbeiten,
+                    kommunizieren und wachsen.
+                </p>
+
+                <div class="scroll-note">
+                    <span class="scroll-line"></span>
+                    Leistungsbereiche entdecken
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+    <div class="container">
+
+        <div class="intro-grid">
+
+            <div class="eyebrow">
+                01 / Perspektive
+            </div>
+
+            <div class="intro-text">
+                Wir verbinden
+                <span>Infrastruktur, Sicherheit,
+                Softwareentwicklung und Automatisierung</span>
+                zu technischen Systemen,
+                die nicht nur funktionieren,
+                sondern langfristig tragfähig bleiben.
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-header">
+            <div class="eyebrow">Leistungsbereiche</div>
+            <div class="section-number">09 Bereiche</div>
+        </div>
+
+
+        <!-- 01 -->
+
+        <article class="service">
+
+            <div class="service-number">01</div>
+
+            <h2>
+                IT-Management<br>
+                & Projektplanung
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">IT-Management</span>
+                <span class="tag">Projektplanung</span>
+                <span class="tag">IT-Infrastruktur-Management</span>
+            </div>
+
+        </article>
+
+
+        <!-- 02 -->
+
+        <article class="service">
+
+            <div class="service-number">02</div>
+
+            <h2>
+                Beratung<br>
+                & Consulting
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">Architekturberatung</span>
+                <span class="tag">IT-Consulting</span>
+                <span class="tag">Projektbegleitung</span>
+            </div>
+
+        </article>
+
+
+        <!-- 03 -->
+
+        <article class="service">
+
+            <div class="service-number">03</div>
+
+            <h2>
+                Server- &<br>
+                Systemmanagement
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">Windows Server</span>
+                <span class="tag">Microsoft Exchange</span>
+                <span class="tag">Linux Server</span>
+                <span class="tag">Microsoft 365</span>
+                <span class="tag">VMware Server</span>
+                <span class="tag">Patch Management</span>
+                <span class="tag">Software-Paketierung</span>
+                <span class="tag">OPSI</span>
+                <span class="tag">Scripting</span>
+                <span class="tag">Active Directory</span>
+                <span class="tag">LDAP</span>
+                <span class="tag">Gruppenrichtlinien</span>
+                <span class="tag">Dell Server</span>
+            </div>
+
+        </article>
+
+
+        <!-- 04 -->
+
+        <article class="service">
+
+            <div class="service-number">04</div>
+
+            <h2>
+                System- &<br>
+                Serverinfrastruktur
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">NGINX</span>
+                <span class="tag">Gunicorn</span>
+
+                <span class="tag">Apache</span>
+                <span class="tag">Reverse Proxy</span>
+                <span class="tag">Linux Administration</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Containerisierung</span>
+                <span class="tag">Scripting</span>
+                <span class="tag">Automatisierung</span>
+            </div>
+
+        </article>
+
+
+        <!-- 05 -->
+
+        <article class="service">
+
+            <div class="service-number">05</div>
+
+            <h2>
+                Netzwerk<br>
+                & Sicherheit
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">Netzwerksicherheit</span>
+                <span class="tag">VPN</span>
+                <span class="tag">WLAN</span>
+                <span class="tag">Router</span>
+                <span class="tag">Switches</span>
+                <span class="tag">VLAN</span>
+                <span class="tag">DNS</span>
+                <span class="tag">Routing</span>
+                <span class="tag">Firewalls</span>
+                <span class="tag">Security</span>
+                <span class="tag">Networking</span>
+            </div>
+
+        </article>
+
+
+        <!-- 06 -->
+
+        <article class="service">
+
+            <div class="service-number">06</div>
+
+            <h2>
+                Virtualisierung<br>
+                & Cloud
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">Virtualisierung</span>
+                <span class="tag">VMware</span>
+                <span class="tag">Microsoft Azure Cloud</span>
+
+
+            </div>
+
+        </article>
+
+
+        <!-- 07 -->
+
+        <article class="service">
+
+            <div class="service-number">07</div>
+
+            <h2>
+                Backup<br>
+                & Infrastruktur
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">Backup-Lösungen</span>
+                <span class="tag">NAS</span>
+                <span class="tag">Dell PowerEdge</span>
+                <span class="tag">HP Serverhardware</span>
+                <span class="tag">Proxmox</span>
+            </div>
+
+        </article>
+
+
+        <!-- 08 -->
+
+        <article class="service">
+
+            <div class="service-number">08</div>
+
+            <h2>
+                Software-<br>
+                entwicklung
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">Java</span>
+                <span class="tag">C++</span>
+                <span class="tag">.NET/ C#</span>
+                <span class="tag">Python</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">React</span>
+                <span class="tag">React Native</span>
+                <span class="tag">Django</span>
+            </div>
+
+        </article>
+
+
+        <!-- 09 -->
+
+        <article class="service">
+
+            <div class="service-number">09</div>
+
+            <h2>
+                Datenbanken<br>
+                & DevOps
+            </h2>
+
+            <div class="service-content">
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Datenbankverwaltung</span>
+                <span class="tag">Open Source</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Automatisierte Workflows</span>
+                <span class="tag">Embedded Systems</span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- PHILOSOPHY -->
+
+<section class="philosophy">
+
+    <div class="container">
+
+        <div class="philosophy-grid">
+
+            <div class="eyebrow">
+                02 / Ansatz
+            </div>
+
+            <div>
+
+                <h2>
+                    Technik wird wertvoll,
+                    wenn sie <em>Zusammenhänge</em>
+                    sichtbar macht.
+                </h2>
+
+
+                <div class="principles">
+
+                    <div class="principle">
+                        <div class="principle-number">01</div>
+
+                        <h3>Struktur</h3>
+
+                        <p>
+                            Klare Architekturen schaffen
+                            Systeme, die verständlich,
+                            wartbar und erweiterbar bleiben.
+                        </p>
+                    </div>
+
+
+                    <div class="principle">
+                        <div class="principle-number">02</div>
+
+                        <h3>Resilienz</h3>
+
+                        <p>
+                            Sicherheit, Backup und
+                            Redundanz werden nicht
+                            nachträglich ergänzt,
+                            sondern mitgedacht.
+                        </p>
+                    </div>
+
+
+                    <div class="principle">
+                        <div class="principle-number">03</div>
+
+                        <h3>Automatisierung</h3>
+
+                        <p>
+                            Wiederholbare Prozesse werden
+                            systematisiert, damit Menschen
+                            sich auf relevante Aufgaben
+                            konzentrieren können.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section class="technology">
+
+    <div class="container">
+
+        <div class="eyebrow">03 / Technologie</div>
+
+        <p class="technology-intro">
+            Ein breites technisches Fundament ermöglicht
+            Lösungen über einzelne Systeme hinaus –
+            von physischer Infrastruktur bis zu
+            modernen Software- und DevOps-Workflows.
+        </p>
+
+
+        <div class="tech-grid">
+
+            <div class="tech-item">
+                <div class="tech-category">Operating Systems</div>
+                <div class="tech-name">Windows · Linux</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Virtualisierung</div>
+                <div class="tech-name">VMware · vSphere · Proxmox</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Infrastructure</div>
+                <div class="tech-name">Dell · HP · NAS · VxRAIL</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Networking</div>
+                <div class="tech-name">DNS · VLAN · VPN · Routing</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Web Infrastructure</div>
+                <div class="tech-name">NGINX · Apache · Docker</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Development</div>
+                <div class="tech-name">Python · TypeScript · JavaScript</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Frameworks</div>
+                <div class="tech-name">React · React Native · Flask</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Data</div>
+                <div class="tech-name">PostgreSQL · MySQL · SQLite</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Microsoft</div>
+                <div class="tech-name">AD · LDAP · Exchange · 365</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Backup</div>
+                <div class="tech-name">Veeam · NAS · Infrastructure</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">DevOps</div>
+                <div class="tech-name">CI/CD · Automation · Scripting</div>
+            </div>
+
+            <div class="tech-item">
+                <div class="tech-category">Systems</div>
+                <div class="tech-name">Embedded Systems</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="eyebrow">
+                04 / Kontakt
+            </div>
+
+            <div>
+
+                <h2>
+                    Lassen Sie uns<br>
+                    <em>Systeme</em><br>
+                    bauen.
+                </h2>
+
+                <a href="mailto:iosif.gogolos@gmail.com" class="contact-link">
+                    Projekt besprechen
+                    <span class="arrow">→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <span>Iosif Gogolos, B.Sc. Softwareentwicklung Google-zertifizierten UX/UI Designer</span>
+    <span>© 2026</span>
+</footer>
+
+</body>
+</html>
