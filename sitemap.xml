@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/leistungen/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/it-infrastruktur/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/softwareentwicklung/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/netzwerk-security/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/devops/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/ueber-mich/</loc>
     </url>
-
     <url>
         <loc>https://iosif-gogolos.github.io/home/kontakt/</loc>
     </url>
-
 </urlset>
