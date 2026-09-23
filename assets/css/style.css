@@ -47,7 +47,7 @@ a {
 
 /* NAVIGATION */
 
-nav {
+body > nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -59,10 +59,8 @@ nav {
     align-items: center;
 
     padding: 28px 5vw;
-
     background: rgba(244, 242, 237, 0.88);
     backdrop-filter: blur(14px);
-
     border-bottom: 1px solid rgba(213, 209, 200, 0.5);
 }
 
