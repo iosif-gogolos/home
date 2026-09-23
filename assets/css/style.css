@@ -543,6 +543,21 @@ footer {
     font-weight: 400;
 }
 
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    text-decoration: underline;
+}
+
 
 /* MOBILE */
 
@@ -644,5 +659,15 @@ footer {
         right: 8%;
         bottom: 8%;
         left: 8%;
+    }
+     footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 12px 20px;
     }
 }
